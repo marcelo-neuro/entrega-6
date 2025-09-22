@@ -26,14 +26,14 @@ public class CartaoDTO {
     @Enumerated(EnumType.STRING)
     @NotNull(message = "O campo \"numero\" é obrigatório.")
     private TipoCartao tipoCartao;
-    @NotNull(message = "O campo \"clienteDto\" é obrigatório.")
-    private ClienteDTO clienteDto;
+    @NotNull(message = "O campo \"clienteId\" é obrigatório.")
+    private Long clienteId;
 
     public CartaoDTO(Cartao entity) {
         this.id = entity.getId();
         this.numero = entity.getNumero();
         this.cvv = entity.getCvv();
         this.tipoCartao = entity.getTipoCartao();
-        this.clienteDto = new ClienteDTO(entity.getCliente());
+        this.clienteId = entity.getCliente().getId();
     }
 }

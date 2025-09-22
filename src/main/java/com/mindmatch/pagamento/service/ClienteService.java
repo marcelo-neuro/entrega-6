@@ -48,6 +48,7 @@ public class ClienteService {
     public ClienteDTO create(ClienteDTO request) {
         Cliente entity = new Cliente();
         toEntity(entity, request);
+        entity.setValorMedioCompra(0.0);
         entity = clienteRepository.save(entity);
 
         return new ClienteDTO(entity);
@@ -63,7 +64,7 @@ public class ClienteService {
         }
 
         toEntity(entity, request);
-        clienteRepository.save(entity);
+        entity = clienteRepository.save(entity);
 
         return new ClienteDTO(entity);
     }
