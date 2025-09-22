@@ -1,5 +1,6 @@
 package com.mindmatch.pagamento.dto;
 
+import com.mindmatch.pagamento.entities.Cliente;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -27,4 +28,12 @@ public class ClienteDTO {
     private String telefone;
     @Positive(message = "O campo deve ser positivo.")
     private Double valorMedioCompra;
+
+    public ClienteDTO(Cliente entity) {
+        this.id = entity.getId();
+        this.nome = entity.getNome();
+        this.email = entity.getEmail();
+        this.telefone = entity.getTelefone();
+        this.valorMedioCompra = entity.getValorMedioCompra();
+    }
 }
