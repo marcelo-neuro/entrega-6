@@ -11,7 +11,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -80,7 +79,7 @@ public class PagamentoController {
             }
     )
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<PagamentoDTO>create(@RequestBody @Valid PagamentoDTO dto){
+    public ResponseEntity<PagamentoDTO> create(@RequestBody @Valid PagamentoDTO dto){
         dto = service.createPagamento(dto);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();

@@ -26,21 +26,25 @@ public class ClienteService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
     public ClienteDTO findById(Long id) {
         return new ClienteDTO(clienteRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado. ID: "+ id)));
     }
 
+    @Transactional(readOnly = true)
     public ClienteDTO findByEmail(String email) {
         return new ClienteDTO(clienteRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado. Email: "+ email)));
     }
 
+    @Transactional(readOnly = true)
     public ClienteDTO findByTelefone(String telefone) {
         return new ClienteDTO(clienteRepository.findByTelefone(telefone)
                 .orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado. Telefone: "+ telefone)));
     }
 
+    @Transactional
     public ClienteDTO create(ClienteDTO request) {
         Cliente entity = new Cliente();
         toEntity(entity, request);
@@ -49,7 +53,8 @@ public class ClienteService {
         return new ClienteDTO(entity);
     }
 
-    public ClienteDTO update(ClienteDTO request, Long id) {
+    @Transactional
+    public ClienteDTO update(Long id, ClienteDTO request) {
         Cliente entity;
         try {
             entity = clienteRepository.getReferenceById(id);
@@ -63,6 +68,7 @@ public class ClienteService {
         return new ClienteDTO(entity);
     }
 
+    @Transactional
     public void delete(Long id) {
         if(!clienteRepository.existsById(id)) {
             throw new ResourceNotFoundException("Recurso não encontrado. ID: "+ id);

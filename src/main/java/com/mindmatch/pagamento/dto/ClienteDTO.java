@@ -1,7 +1,6 @@
 package com.mindmatch.pagamento.dto;
 
 import com.mindmatch.pagamento.entities.Cliente;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
