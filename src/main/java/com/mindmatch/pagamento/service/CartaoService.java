@@ -1,7 +1,6 @@
 package com.mindmatch.pagamento.service;
 
 import com.mindmatch.pagamento.dto.CartaoDTO;
-import com.mindmatch.pagamento.dto.ClienteDTO;
 import com.mindmatch.pagamento.entities.Cartao;
 import com.mindmatch.pagamento.entities.Cliente;
 import com.mindmatch.pagamento.repositories.CartaoRepository;

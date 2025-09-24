@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,20 +19,18 @@ public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal valor;
-    @Column(nullable = false)
-    private String nome;
-    @Column(nullable = false)
-    private String numeroDoCartao;
-    @Column(nullable = false)
-    private String validade;
-    @Column(nullable = false)
-    private String codigoDeSeguranca;
-    @Column(nullable = false)
-    private Long formaDePagamentoId; //1 - crédito | 2 -débito
-    @Column(name = "transaction_date")
-    private LocalDate transactionDate;
-    @Column(length = 255)
+    @Column(length = 200, nullable = false)
     private String descricao;
+    @Column(nullable = false)
+    private LocalDateTime data;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", nullable = false)
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cartao", nullable = false)
+    private Cartao cartao;
 }
