@@ -24,7 +24,7 @@ public class Cartao {
     @Column(length = 3, nullable = false)
     private String cvv;
     @Column(nullable = false)
-    private LocalDate validade;
+    private LocalDate vencimento;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoCartao tipoCartao;

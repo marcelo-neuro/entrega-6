@@ -88,7 +88,7 @@ public class CartaoService {
         entity.setNumero(dto.getNumero());
         entity.setCvv(dto.getCvv());
         entity.setTipoCartao(dto.getTipoCartao());
-        entity.setValidade(dto.getValidade());
+        entity.setVencimento(dto.getVencimento());
 
         Cliente cliente = new Cliente();
         cliente.setId(dto.getClienteId());

@@ -30,8 +30,10 @@ public class PagamentoDTO {
     private String descricao;
 
     @NotNull(message = "Campo requerido")
+    @Schema(description = "Identificador do cliente que efetuou o pagamento")
     private Long clienteId;
     @NotNull(message = "Campo requerido")
+    @Schema(description = "Identificador do cartão utilizado no pagamento")
     private Long cartaoId;
 
     public PagamentoDTO(Pagamento entity) {
