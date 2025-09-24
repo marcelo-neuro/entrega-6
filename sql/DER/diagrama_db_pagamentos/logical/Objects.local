@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="B26F07DA-6542-21C0-FFD1-CE9297070E6B" name="CARTOES" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FEB28ABB-3643-E2B3-9D04-848AF79C30F4" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="9CCE1EFC-4F88-17BD-A27E-85B8A5AB1570" name="CLIENTES" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FEB28ABB-3643-E2B3-9D04-848AF79C30F4" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="F0F7E1F3-C7B6-ADDC-1BFF-AED57BD8F581" name="PAGAMENTOS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FEB28ABB-3643-E2B3-9D04-848AF79C30F4" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="2399E950-1AE8-C639-E5DA-5C7B9E7B3B61" name="USUARIOS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FEB28ABB-3643-E2B3-9D04-848AF79C30F4" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>
