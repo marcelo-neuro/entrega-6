@@ -1,7 +1,6 @@
 package com.mindmatch.pagamento.controller;
-
-import com.mindmatch.pagamento.dto.ClienteDTO;
-import com.mindmatch.pagamento.service.ClienteService;
+import com.mindmatch.pagamento.dto.CartaoDTO;
+import com.mindmatch.pagamento.service.CartaoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,30 +15,29 @@ import java.net.URI;
 import java.util.List;
 
 @RequiredArgsConstructor
-
 @RestController
-@RequestMapping(path = "/clientes")
-@Tag(name = "Cliente", description = "Controller para cliente")
-public class ClienteController {
+@RequestMapping(path = "/cartoes")
+@Tag(name = "Cartões", description = "Controller para cartões dos clientes")
+public class CartaoController {
 
-    private final ClienteService clienteService;
+    private final CartaoService cartaoService;
 
     @Operation(
-            description = "Listar Clientes",
-            summary = "Retorna uma lista com todos os Clientes registrados.",
+            description = "Listar Cartões",
+            summary = "Retorna uma lista com todos os Cartões registrados.",
             responses = {
                     @ApiResponse(description = "Ok", responseCode = "200"),
             }
     )
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<ClienteDTO>> findAll() {
-        List<ClienteDTO> res = clienteService.findAll();
+    public ResponseEntity<List<CartaoDTO>> findAll() {
+        List<CartaoDTO> res = cartaoService.findAll();
         return ResponseEntity.ok(res);
     }
 
     @Operation(
-            description = "Busca cliente por Id",
-            summary = "Consulta um cliente por Id.",
+            description = "Busca cartão por Id",
+            summary = "Consulta um cartão por Id.",
             responses = {
                     @ApiResponse(description = "Ok", responseCode = "200"),
                     @ApiResponse(description = "Not Found", responseCode = "404"),
@@ -47,44 +45,29 @@ public class ClienteController {
             }
     )
     @GetMapping(path = "/id/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity <ClienteDTO> findById(@PathVariable Long id) {
-        ClienteDTO res = clienteService.findById(id);
+    public ResponseEntity <CartaoDTO> findById(@PathVariable Long id) {
+        CartaoDTO res = cartaoService.findById(id);
         return ResponseEntity.ok(res);
     }
 
     @Operation(
-            description = "Busca cliente por E-mail",
-            summary = "Consulta um cliente por E-mail.",
+            description = "Busca cartões a partir do Id do cliente",
+            summary = "Retorna todos os cartões de um cliente a partir do Id do cliente",
             responses = {
                     @ApiResponse(description = "Ok", responseCode = "200"),
                     @ApiResponse(description = "Not Found", responseCode = "404"),
                     @ApiResponse(description = "Unauthorized", responseCode = "401")
             }
     )
-    @GetMapping(path = "/email/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity <ClienteDTO> findByEmail(@PathVariable String email) {
-        ClienteDTO res = clienteService.findByEmail(email);
+    @GetMapping(path = "/clienteId/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity <List<CartaoDTO>> findByClienteId(@PathVariable Long id) {
+        List<CartaoDTO> res = cartaoService.findByClienteId(id);
         return ResponseEntity.ok(res);
     }
 
     @Operation(
-            description = "Busca cliente por Telefone",
-            summary = "Consulta um cliente por Telefone",
-            responses = {
-                    @ApiResponse(description = "Ok", responseCode = "200"),
-                    @ApiResponse(description = "Not Found", responseCode = "404"),
-                    @ApiResponse(description = "Unauthorized", responseCode = "401")
-            }
-    )
-    @GetMapping(path = "/telefonre/{telefonre}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity <ClienteDTO> findByTelefone(@PathVariable String telefonre) {
-        ClienteDTO res = clienteService.findByTelefone(telefonre);
-        return ResponseEntity.ok(res);
-    }
-
-    @Operation(
-            description = "Cria um novo Cliente",
-            summary = "Salva um novo Cliente.",
+            description = "Cria um novo Cartão",
+            summary = "Salva um novo Cartão.",
             responses = {
                     @ApiResponse(description = "Created", responseCode = "201"),
                     @ApiResponse(description = "Unprocessable Entity", responseCode = "422"),
@@ -92,8 +75,8 @@ public class ClienteController {
             }
     )
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ClienteDTO> create(@RequestBody @Valid ClienteDTO request){
-        request = clienteService.create(request);
+    public ResponseEntity<CartaoDTO> create(@RequestBody @Valid CartaoDTO request){
+        request = cartaoService.create(request);
 
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -105,8 +88,8 @@ public class ClienteController {
     }
 
     @Operation(
-            description = "Atualiza um Cliente apartir do identificador (id)",
-            summary = "Atualiza o Cliente pelo id.",
+            description = "Atualiza um Cartão apartir do identificador (id)",
+            summary = "Atualiza o Cartão pelo id.",
             responses = {
                     @ApiResponse(description = "Ok", responseCode = "200"),
                     @ApiResponse(description = "Unprocessable Entity", responseCode = "422"),
@@ -115,14 +98,14 @@ public class ClienteController {
             }
     )
     @PutMapping(value = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ClienteDTO> update( @PathVariable Long id, @RequestBody @Valid ClienteDTO request){
-        request = clienteService.update(id, request);
+    public ResponseEntity<CartaoDTO> update( @PathVariable Long id, @RequestBody @Valid CartaoDTO request){
+        request = cartaoService.update(id, request);
         return ResponseEntity.ok(request);
     }
 
     @Operation(
-            description = "Apaga um Cliente apartir do identificador (id)",
-            summary = "Deleta o Cliente pelo id.",
+            description = "Apaga um Cartão apartir do identificador (id)",
+            summary = "Deleta o Cartão pelo id.",
             responses = {
                     @ApiResponse(description = "No Contert", responseCode = "204"),
                     @ApiResponse(description = "Bad Request", responseCode = "400"),
@@ -132,7 +115,7 @@ public class ClienteController {
     )
     @DeleteMapping(value = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> delete(@PathVariable Long id){
-        clienteService.delete(id);
+        cartaoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
