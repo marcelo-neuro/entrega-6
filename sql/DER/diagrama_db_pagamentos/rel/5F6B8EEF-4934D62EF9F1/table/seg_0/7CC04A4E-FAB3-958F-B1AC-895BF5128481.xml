@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7CC04A4E-FAB3-958F-B1AC-895BF5128481" name="PAGAMENTOS">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:56:35 UTC</createdTime>
+<generatorID>F0F7E1F3-C7B6-ADDC-1BFF-AED57BD8F581</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pagamento" id="3150CF9B-ED0B-EA55-96C4-011E065CED1E">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:56:35 UTC</createdTime>
+<generatorID>8B9DF285-4CE5-0FDD-9E05-1B6D1BBDC093</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_cartao" id="CA024081-2A9D-3A69-1D77-137B351B2B37">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 15:04:07 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0B7C9E7-CD9B-0A46-673D-4723DF4247C6" referredColumn="4FA02866-F5F4-1B61-CFDB-CED241163483"/>
+</associations>
+</Column>
+<Column name="id_cliente" id="7627C5AC-0F0B-E9C9-7AB3-BA40B85475E5">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-22 19:26:38 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="596CD41F-A270-EE2C-FCA6-AE4624408A6F" referredColumn="A9E75DBD-E1B1-94BC-32B9-19F24A07C4E5"/>
+</associations>
+</Column>
+<Column name="valor_pagamento" id="6DA3E608-FB52-AEE6-CBEF-74C6AE53DFC8">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:56:35 UTC</createdTime>
+<generatorID>C8D7E914-01C0-F657-40DD-955176AE4B9F</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao_pagamento" id="C59946ED-9EA5-5061-C157-9095211C6F13">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:56:35 UTC</createdTime>
+<generatorID>152C6CB8-1D9A-D02F-7183-1D23A691A919</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_pagamento" id="4D6FE436-659D-910F-8764-35141326D221">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:56:35 UTC</createdTime>
+<generatorID>47A93850-9F57-A000-39D4-D6A1455CA269</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E09898F7-71DB-0F29-4E07-823A35A08117" name="PAGAMENTOS_PK">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:56:35 UTC</createdTime>
+<generatorID>EDA7F9F9-5DA3-3F24-3929-89C94ACB5A4E</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3150CF9B-ED0B-EA55-96C4-011E065CED1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F3C7A5E4-D03D-6737-DF64-9C6912C72E42" name="id_cartao">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 15:04:07 UTC</createdTime>
+<generatorID>4D4F8ADB-C8D5-777F-10E5-F651566B5130</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA024081-2A9D-3A69-1D77-137B351B2B37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1536EF98-642A-8EAB-E634-2C6F352F19B8" name="PAGAMENTOS_CLIENTES_FK">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-22 19:26:38 UTC</createdTime>
+<generatorID>EC5D15B0-37DA-1457-658B-979418C49322</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7627C5AC-0F0B-E9C9-7AB3-BA40B85475E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

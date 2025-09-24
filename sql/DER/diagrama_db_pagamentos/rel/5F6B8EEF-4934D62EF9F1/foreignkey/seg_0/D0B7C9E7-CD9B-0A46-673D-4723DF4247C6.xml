@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D0B7C9E7-CD9B-0A46-673D-4723DF4247C6" containerWithKeyObject="7CC04A4E-FAB3-958F-B1AC-895BF5128481" localFKIndex="F3C7A5E4-D03D-6737-DF64-9C6912C72E42" name="id_cartao">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 15:04:07 UTC</createdTime>
+<generatorID>4D4F8ADB-C8D5-777F-10E5-F651566B5130</generatorID>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<referredTableLongName>CARTOES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C745CBB7-E0DC-7295-D10C-698F76D0BEB9</referredTableID>
+<keyObject>00912486-705C-0660-45DA-4A39F8C7B805</keyObject>
+<referredKeyID>00912486-705C-0660-45DA-4A39F8C7B805</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_cartao</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="FEB28ABB-3643-E2B3-9D04-848AF79C30F4" mainViewID="BD302D35-621A-8BA4-AB76-69C25576CE31">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 13:54:32 UTC</createdTime>
+<ownerDesignName>entrega-6</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

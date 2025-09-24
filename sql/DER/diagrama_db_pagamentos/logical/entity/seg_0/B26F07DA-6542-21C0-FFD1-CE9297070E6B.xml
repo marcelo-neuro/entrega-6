@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B26F07DA-6542-21C0-FFD1-CE9297070E6B" name="CARTOES">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:27:04 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_cartao" id="15CE2A46-B5DE-9AD2-1FBF-0B74457554EC">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:27:17 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero_cartao" id="69AD9F63-ACB6-4992-AD51-FD351B83E5A6">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:27:32 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cvv_cartao" id="DDED76CA-F360-F5A6-8148-974771052D7C">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:30:12 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_cartao" id="7E810DC0-717E-9EAC-B716-1699D649871D">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:30:30 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4D4F8ADB-C8D5-777F-10E5-F651566B5130" name="CARTOES PK">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:27:31 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>15CE2A46-B5DE-9AD2-1FBF-0B74457554EC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F0F7E1F3-C7B6-ADDC-1BFF-AED57BD8F581" name="PAGAMENTOS">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:19:48 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pagamento" id="8B9DF285-4CE5-0FDD-9E05-1B6D1BBDC093">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:20:43 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor_pagamento" id="C8D7E914-01C0-F657-40DD-955176AE4B9F">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:21:01 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descricao_pagamento" id="152C6CB8-1D9A-D02F-7183-1D23A691A919">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:25:28 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_pagamento" id="47A93850-9F57-A000-39D4-D6A1455CA269">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:48:58 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EDA7F9F9-5DA3-3F24-3929-89C94ACB5A4E" name="PAGAMENTO PK">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 14:20:57 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<engineerTo>
+<item key="5F6B8EEF-EAE5-75DB-212D-4934D62EF9F1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8B9DF285-4CE5-0FDD-9E05-1B6D1BBDC093</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

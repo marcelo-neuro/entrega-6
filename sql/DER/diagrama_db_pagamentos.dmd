@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="diagrama_db_pagamentos" id="5E06DB19-3BB7-7175-B708-8914281E1B4C" version="3.5">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-17 13:54:32 UTC</createdTime>
+<ownerDesignName>entrega-6</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>5E06DB19-3BB7-7175-B708-8914281E1B4C</designId>
+</OSDM_Design>
