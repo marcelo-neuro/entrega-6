@@ -1,6 +1,7 @@
 package com.mindmatch.pagamento.controller;
 
 
+import com.mindmatch.pagamento.dto.CartaoDTO;
 import com.mindmatch.pagamento.dto.FormDTO;
 import com.mindmatch.pagamento.dto.PagamentoDTO;
 import com.mindmatch.pagamento.service.PagamentoService;
@@ -40,6 +41,21 @@ public class PagamentoController {
     }
 
     @Operation(
+            description = "Busca pagamentos a partir do Id do cliente",
+            summary = "Retorna todos os pagamentos de um cliente a partir do Id do cliente",
+            responses = {
+                    @ApiResponse(description = "Ok", responseCode = "200"),
+                    @ApiResponse(description = "Not Found", responseCode = "404"),
+                    @ApiResponse(description = "Unauthorized", responseCode = "401")
+            }
+    )
+    @GetMapping(path = "/clienteId/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity <List<PagamentoDTO>> findByClienteId(@PathVariable Long id) {
+        List<PagamentoDTO> res = service.findByClienteId(id);
+        return ResponseEntity.ok(res);
+    }
+
+    @Operation(
             description = "Retorna um pagamento a partir do seu identidficador (id)",
             summary = "Consulta um pagamento por id",
             responses = {
@@ -54,20 +70,20 @@ public class PagamentoController {
         return ResponseEntity.ok(dto);
     }
 
-    @Operation(
-            description = "Consulta todos os pagementos que correspondem ao furmulário",
-            summary = "Consulta todos os pagamentos de acordo com os campos do formulário",
-            responses = {
-                    @ApiResponse(description = "Ok", responseCode = "200"),
-                    @ApiResponse(description = "Bad Request", responseCode = "400"),
-                    @ApiResponse(description = "Unauthorized", responseCode = "401")
-            }
-    )
-    @PostMapping(value = "/forms", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<PagamentoDTO>> getByForms(@RequestBody @Valid FormDTO formDTO) {
-        List<PagamentoDTO> result = service.getByForm(formDTO);
-        return ResponseEntity.ok(result); 
-    }
+//    @Operation(
+//            description = "Consulta todos os pagementos que correspondem ao furmulário",
+//            summary = "Consulta todos os pagamentos de acordo com os campos do formulário",
+//            responses = {
+//                    @ApiResponse(description = "Ok", responseCode = "200"),
+//                    @ApiResponse(description = "Bad Request", responseCode = "400"),
+//                    @ApiResponse(description = "Unauthorized", responseCode = "401")
+//            }
+//    )
+//    @PostMapping(value = "/forms", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<List<PagamentoDTO>> getByForms(@RequestBody @Valid FormDTO formDTO) {
+//        List<PagamentoDTO> result = service.getByForm(formDTO);
+//        return ResponseEntity.ok(result);
+//    }
 
     @Operation(
             description = "Cria um novo pagamento",
@@ -120,4 +136,3 @@ public class PagamentoController {
     }
 
 }
-//

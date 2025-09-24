@@ -11,6 +11,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -26,6 +28,8 @@ public class CartaoDTO {
     @Enumerated(EnumType.STRING)
     @NotNull(message = "O campo \"numero\" é obrigatório.")
     private TipoCartao tipoCartao;
+    @NotNull(message = "O campo \"validade\" é obrigatório.")
+    private LocalDate validade;
     @NotNull(message = "O campo \"clienteId\" é obrigatório.")
     private Long clienteId;
 
@@ -34,6 +38,7 @@ public class CartaoDTO {
         this.numero = entity.getNumero();
         this.cvv = entity.getCvv();
         this.tipoCartao = entity.getTipoCartao();
+        this.validade = entity.getValidade();
         this.clienteId = entity.getCliente().getId();
     }
 }

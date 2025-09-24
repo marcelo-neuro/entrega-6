@@ -3,6 +3,8 @@ package com.mindmatch.pagamento.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Builder
@@ -21,6 +23,8 @@ public class Cartao {
     private String numero;
     @Column(length = 3, nullable = false)
     private String cvv;
+    @Column(nullable = false)
+    private LocalDate validade;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoCartao tipoCartao;

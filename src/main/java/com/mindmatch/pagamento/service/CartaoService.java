@@ -37,9 +37,13 @@ public class CartaoService {
 
     @Transactional(readOnly = true)
     public List<CartaoDTO> findByClienteId(Long id) {
-        return cartaoRepository.findByClienteId(id)
-                .stream().map(CartaoDTO::new)
-                .toList();
+        try {
+            return cartaoRepository.findByClienteId(id)
+                    .stream().map(CartaoDTO::new)
+                    .toList();
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException("Recurso não encontrado. ID: "+ id);
+        }
     }
 
     @Transactional
@@ -84,6 +88,7 @@ public class CartaoService {
         entity.setNumero(dto.getNumero());
         entity.setCvv(dto.getCvv());
         entity.setTipoCartao(dto.getTipoCartao());
+        entity.setValidade(dto.getValidade());
 
         Cliente cliente = new Cliente();
         cliente.setId(dto.getClienteId());

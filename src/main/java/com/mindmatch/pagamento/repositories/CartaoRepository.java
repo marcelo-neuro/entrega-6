@@ -12,7 +12,7 @@ public interface CartaoRepository extends JpaRepository<Cartao, Long> {
     @Query("""
             SELECT ca FROM Cartao ca
             JOIN ca.cliente c
-            WHERE c.id := id
+            WHERE c.id = :id
             """)
     List<Cartao> findByClienteId(Long id);
 }
