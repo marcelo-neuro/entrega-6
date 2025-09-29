@@ -1,9 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2DADFD3A-A150-F564-DEC7-E79093AAB05E" name="CLIENTES">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2DADFD3A-A150-F564-DEC7-E79093AAB05E" name="TB_CLIENTE">
 <createdBy>neuromancer</createdBy>
 <createdTime>2025-09-17 14:56:35 UTC</createdTime>
 <generatorID>9CCE1EFC-4F88-17BD-A27E-85B8A5AB1570</generatorID>
 <ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<ordsAlias>clientes</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -81,6 +82,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A9E75DBD-E1B1-94BC-32B9-19F24A07C4E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08FA17F9-139A-EA07-1441-B50FBB7EBA13" name="email_cliente_un">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-25 14:59:49 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58BFA001-AD3C-BF76-F081-93CA1110B515"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="12F036A0-8E96-F2FA-535F-1A394EA15E9F" name="telefone_cliente_un">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-25 14:59:49 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73525D68-3E49-3A40-1DD2-C28020504935"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

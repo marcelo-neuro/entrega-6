@@ -1,9 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C745CBB7-E0DC-7295-D10C-698F76D0BEB9" name="CARTOES">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C745CBB7-E0DC-7295-D10C-698F76D0BEB9" name="TB_CARTAO">
 <createdBy>neuromancer</createdBy>
 <createdTime>2025-09-17 14:56:35 UTC</createdTime>
 <generatorID>B26F07DA-6542-21C0-FFD1-CE9297070E6B</generatorID>
 <ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<ordsAlias>cartoes</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -93,6 +94,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4FA02866-F5F4-1B61-CFDB-CED241163483"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="94F4FDCB-2E2F-70D9-200B-E7003876119D" name="numero_cartao_un">
+<createdBy>neuromancer</createdBy>
+<createdTime>2025-09-25 14:58:53 UTC</createdTime>
+<ownerDesignName>diagrama_db_pagamentos</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2C63B46-AD3F-30AF-011C-CF92E57528CF"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="4780B33D-4C18-3D99-A056-AEC68F25DD24" name="id_cliente">
