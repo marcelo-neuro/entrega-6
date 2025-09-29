@@ -18,18 +18,19 @@ public class Cartao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cartao")
     private Long id;
-    @Column(length = 20, nullable = false)
+    @Column(name = "numero_cartao")
     private String numero;
-    @Column(length = 3, nullable = false)
+    @Column(name = "cvv_cartao")
     private String cvv;
-    @Column(nullable = false)
+    @Column(name = "validade_cartao")
     private LocalDate vencimento;
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "tipo_cartao")
     private TipoCartao tipoCartao;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente", nullable = false)
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 }

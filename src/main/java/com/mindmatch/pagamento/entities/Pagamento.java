@@ -18,19 +18,20 @@ public class Pagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pagamento")
     private Long id;
-    @Column(precision = 10, scale = 2, nullable = false)
+    @Column(name = "valor_pagamento")
     private BigDecimal valor;
-    @Column(length = 200, nullable = false)
+    @Column(name = "descricao_pagamento")
     private String descricao;
-    @Column(nullable = false)
+    @Column(name = "data_pagamento")
     private LocalDateTime data;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente", nullable = false)
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "id_cartao", nullable = false)
+    @JoinColumn(name = "id_cartao")
     private Cartao cartao;
 }

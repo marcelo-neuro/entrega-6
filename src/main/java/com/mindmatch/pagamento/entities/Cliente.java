@@ -16,13 +16,14 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cliente")
     private Long id;
-    @Column(length = 200, nullable = false)
+    @Column(name = "nome_cliente")
     private String nome;
-    @Column(length = 200, nullable = false, unique = true)
+    @Column(name = "email_cliente")
     private String email;
-    @Column(length = 14, nullable = false, unique = true)
+    @Column(name = "telefone_cliente")
     private String telefone;
-    @Column(nullable = false)
+    @Column(name = "valor_medio_pagamento")
     private Double valorMedioCompra; // Futuramente pode ser movido para uma tabela de estatisticas;
 }
