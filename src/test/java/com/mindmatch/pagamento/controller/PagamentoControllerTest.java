@@ -10,7 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -34,17 +34,23 @@ class PagamentoControllerTest {
 
     @Test
     void postPagamento_requiresAuth() throws Exception {
-    PagamentoDTO dto = new PagamentoDTO(null, BigDecimal.valueOf(10.0), "User Test", "4111111111111111", "12/25", "123", 1L, LocalDate.now(), "Teste");
+        PagamentoDTO dto = new PagamentoDTO(
+                null,
+                BigDecimal.valueOf(10.0),
+                LocalDateTime.now(),
+                "Teste",
+                1L,
+                1L
+        );
         mockMvc.perform(post("/pagamentos")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(dto)))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(dto)))
                 .andExpect(status().isUnauthorized());
 
-        // with basic auth (manager) should be allowed
         mockMvc.perform(post("/pagamentos")
-                .with(httpBasic("manager","!L3tm3iN!"))
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(dto)))
+                        .with(httpBasic("manager","!L3tm3iN!"))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(dto)))
                 .andExpect(status().isCreated());
     }
 }

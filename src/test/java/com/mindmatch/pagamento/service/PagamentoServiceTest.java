@@ -10,7 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -26,16 +26,14 @@ class PagamentoServiceTest {
     private PagamentoService service;
 
     @Test
-    void createPagamento_shouldCopyTransactionDateAndDescricao() {
-        PagamentoDTO dto = new PagamentoDTO(null,
+    void createPagamento_shouldSetDateAndKeepDescricao() {
+        PagamentoDTO dto = new PagamentoDTO(
+                null,
                 BigDecimal.valueOf(123.45),
-                "Teste",
-                "4111111111111111",
-                "12/25",
-                "123",
+                LocalDateTime.now(),
+                "Compra: teste",
                 1L,
-                LocalDate.of(2025,8,21),
-                "Compra: teste" // descricao
+                1L
         );
 
         when(repository.save(any(Pagamento.class))).thenAnswer(invocation -> {
@@ -48,7 +46,7 @@ class PagamentoServiceTest {
 
         assertNotNull(result);
         assertEquals(99L, result.getId());
-        assertEquals(dto.getTransactionDate(), result.getTransactionDate());
         assertEquals(dto.getDescricao(), result.getDescricao());
+        assertNotNull(result.getDataTransacao());
     }
 }

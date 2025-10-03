@@ -19,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/clientes")
+@CrossOrigin(origins = "*")
 @Tag(name = "Cliente", description = "Controller para cliente")
 public class ClienteController {
 

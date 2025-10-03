@@ -17,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/cartoes")
+@CrossOrigin(origins = "*")
 @Tag(name = "Cartões", description = "Controller para cartões dos clientes")
 public class CartaoController {
 

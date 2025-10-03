@@ -1,6 +1,15 @@
-INSERT INTO tb_pagamento(valor, nome, numero_do_cartao, validade, codigo_de_seguranca, forma_de_pagamento_id) VALUES(540.0, 'Jorge', '6895426578961254', '12/30', '589', 2);
-INSERT INTO tb_pagamento(valor, nome, numero_do_cartao, validade, codigo_de_seguranca, forma_de_pagamento_id) VALUES(560.0, 'Fernando', '2457896547123654', '01/28', '389', 1);
-INSERT INTO tb_pagamento(valor, nome, numero_do_cartao, validade, codigo_de_seguranca, forma_de_pagamento_id) VALUES(128.0, 'Guilherme', '2456178921437892', '07/32', '379', 2);
-INSERT INTO tb_pagamento(valor, nome, numero_do_cartao, validade, codigo_de_seguranca, forma_de_pagamento_id) VALUES(75.5, 'Ana', '4111111111111111', '11/26', '321', 1);
-INSERT INTO tb_pagamento(valor, nome, numero_do_cartao, validade, codigo_de_seguranca, forma_de_pagamento_id) VALUES(99.9, 'Bruna', '5555555555554444', '03/27', '456', 2);
-INSERT INTO tb_pagamento(valor, nome, numero_do_cartao, validade, codigo_de_seguranca, forma_de_pagamento_id) VALUES(150.0, 'Carlos', '4012888888881881', '08/29', '789', 1);
+-- Dados de exemplo compatíveis com a estrutura Oracle atual
+-- Execute primeiro: sql/scripts/pagamento_create.sql
+-- Depois execute: sql/scripts/pagamento_import.sql (com dados realistas)
+
+INSERT INTO TB_CLIENTE (ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, TELEFONE_CLIENTE, VALOR_MEDIO_PAGAMENTO) VALUES (1, 'Bruno Souza', 'bruno.souza579@emailaleatorio.com', '(11) 998887304', 579.56);
+INSERT INTO TB_CLIENTE (ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, TELEFONE_CLIENTE, VALOR_MEDIO_PAGAMENTO) VALUES (2, 'João Gomes', 'joao.gomes265@emailaleatorio.com', '(11) 992650167', 926.50);
+INSERT INTO TB_CLIENTE (ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, TELEFONE_CLIENTE, VALOR_MEDIO_PAGAMENTO) VALUES (3, 'Isabela Santos', 'isabela.santos705@emailaleatorio.com', '(11) 985521026', 705.82);
+
+INSERT INTO TB_CARTAO (ID_CARTAO, NUMERO_CARTAO, CVV_CARTAO, VALIDADE_CARTAO, TIPO_CARTAO, ID_CLIENTE) VALUES (1, '4111111111111111', '123', DATE '2025-12-31', 'CREDITO', 1);
+INSERT INTO TB_CARTAO (ID_CARTAO, NUMERO_CARTAO, CVV_CARTAO, VALIDADE_CARTAO, TIPO_CARTAO, ID_CLIENTE) VALUES (2, '5555555555554444', '456', DATE '2026-06-30', 'DEBITO', 2);
+INSERT INTO TB_CARTAO (ID_CARTAO, NUMERO_CARTAO, CVV_CARTAO, VALIDADE_CARTAO, TIPO_CARTAO, ID_CLIENTE) VALUES (3, '4012888888881881', '789', DATE '2027-03-31', 'CREDITO', 3);
+
+INSERT INTO TB_PAGAMENTO (ID_PAGAMENTO, VALOR_PAGAMENTO, DESCRICAO_PAGAMENTO, DATA_PAGAMENTO, ID_CLIENTE, ID_CARTAO) VALUES (1, 579.56, 'Plano MindMatch Premium', TIMESTAMP '2024-12-28 14:30:00', 1, 1);
+INSERT INTO TB_PAGAMENTO (ID_PAGAMENTO, VALOR_PAGAMENTO, DESCRICAO_PAGAMENTO, DATA_PAGAMENTO, ID_CLIENTE, ID_CARTAO) VALUES (2, 926.50, 'Plano MindMatch premium família', TIMESTAMP '2024-11-07 16:45:00', 2, 2);
+INSERT INTO TB_PAGAMENTO (ID_PAGAMENTO, VALOR_PAGAMENTO, DESCRICAO_PAGAMENTO, DATA_PAGAMENTO, ID_CLIENTE, ID_CARTAO) VALUES (3, 705.82, 'Plano MindMatch básico', TIMESTAMP '2024-10-02 09:15:00', 3, 3);
