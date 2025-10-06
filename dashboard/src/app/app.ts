@@ -24,8 +24,12 @@ export class AppModule {
   ngOnInit(){
   }
 
-  nome: string = "";
-  nCartao: string = "";
+  telefone: string = "";
+  email: string = "";
+  idCliente: number = 0;
+  idTransacao: number = 0;
+
+  listaDados: any = [];
 
   selecionou: boolean = false
   logou: boolean = false

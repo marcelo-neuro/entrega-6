@@ -49,7 +49,7 @@ public class PagamentoController {
                     @ApiResponse(description = "Unauthorized", responseCode = "401")
             }
     )
-    @GetMapping(path = "/clienteId/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/clienteId/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity <List<PagamentoDTO>> findByClienteId(@PathVariable Long id) {
         List<PagamentoDTO> res = service.findByClienteId(id);
         return ResponseEntity.ok(res);

@@ -77,9 +77,9 @@ public class ClienteController {
                     @ApiResponse(description = "Unauthorized", responseCode = "401")
             }
     )
-    @GetMapping(path = "/telefonre/{telefonre}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity <ClienteDTO> findByTelefone(@PathVariable String telefonre) {
-        ClienteDTO res = clienteService.findByTelefone(telefonre);
+    @GetMapping(path = "/telefone/{telefone}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity <ClienteDTO> findByTelefone(@PathVariable String telefone) {
+        ClienteDTO res = clienteService.findByTelefone(telefone);
         return ResponseEntity.ok(res);
     }
 

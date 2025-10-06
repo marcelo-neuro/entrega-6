@@ -7,11 +7,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HomeService {
-  private apiUrl = 'http://localhost:8080/pagamentos';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
   obterDados(): Observable<Pessoal[]> {
-    return this.http.get<Pessoal[]>(this.apiUrl);
+    return this.http.get<Pessoal[]>(this.apiUrl+"/pagamentos");
+  }
+  obterDadosCartao() {
+    return this.http.get(this.apiUrl+"/cartoes");
+  }
+  obterDadosNomes() {
+    return this.http.get(this.apiUrl+"/clientes");
   }
 }

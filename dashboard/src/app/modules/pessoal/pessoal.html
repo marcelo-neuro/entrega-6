@@ -11,17 +11,17 @@
     </div>
     <div class="formInputs">
       <div class="form">
-        <label for="Nome">Nome:</label>
-        <input type="text" id="nome" name="Nome" [(ngModel)]="nome" />
+        <label for="Nome">Email:</label>
+        <input type="text" id="nome" name="Nome" [(ngModel)]="email" />
       </div>
       <div class="form">
-        <label for="NCartao">Numero do cartão:</label>
-        <input type="text" id="nCartao" name="NCartao" [(ngModel)]="nCartao" />
+        <label for="NCartao">Telefone:</label>
+        <input type="text" id="nCartao" name="NCartao" [(ngModel)]="telefone" />
       </div>
     </div>
     <p class="mensagem" *ngIf="mensagem">{{mensagem}}</p>
     <div class="formsBtn">
-      <button type="button" class="btnBusca" (click)="obterDados(nome, nCartao)">Buscar Cliente</button>
+      <button type="button" class="btnBusca" (click)="clicouBotao(telefone, email)">Buscar Cliente</button>
       <button type="button" class="btnLimpa" (click)="limparInfo()">Limpar Campos</button>
     </div>
   </div>
@@ -36,24 +36,24 @@
       <div class="dadosUsur">
         <div class="dado">
           <label for="">Nome</label>
-          <p>{{nomeUsur}}</p>
+          <p>{{dadosCliente.nome}}</p>
         </div>
         <div class="dado">
-          <label for="">Numero do cartão</label>
-          <p>{{nCartaoUsur}}</p>
+          <label for="">Email</label>
+          <p>{{dadosCliente.email}}</p>
         </div>
         <div class="dado">
-          <label for="">CVV</label>
-          <p>{{cvv}}</p>
+          <label for="">Telefone</label>
+          <p>{{dadosCliente.telefone}}</p>
         </div>
         <div class="dado">
-          <label for="">Validade</label>
-          <p>{{validade}}</p>
+          <label for="">Numero de cartões</label>
+          <p>{{listaCartoes.length}}</p>
         </div>
       </div>
-      <div class="curios">
+      <div class="curios" *ngIf="!global.selecionou">
         <div class="curiosidade">
-            <p>{{nOperacoes}}</p>
+            <p>{{listaTransacoes.length}}</p>
             <label for="">Numero de Operações</label>
         </div>
         <div class="curiosidade">
@@ -61,36 +61,54 @@
             <label for="">Total Transferido</label>
         </div>
         <div class="curiosidade">
-            <p>{{tpPag}}</p>
-            <label for="">Forma de Pagamento recorrente</label>
+            <p>{{dadosCliente.valorMedioCompra}}</p>
+            <label for="">Valor médio de Compra</label>
         </div>
       </div>
     </div>
     <div class="list">
       <div class="infos">
-        <h3 style="color: #262626">Transações Recentes</h3>
+        <h3 style="color: #262626">Transações do mes atual</h3>
         <p style="color: #707070">Ultimas movimentações do sistema</p>
       </div>
       <div class="table">
         <table>
           <thead style="background-color: #efefef">
-            <tr>
-              <th align="start">ID da Compra</th>
+            @if(global.selecionou === true){
+             <tr>
+              <th align="start">Cliente</th>
               <th align="start">Valor</th>
-              <th align="start">Descrição</th>
-              <th align="start">Data da Transaçao</th>
-              <th align="start">Forma de pagam.</th>
+              <th align="start">Cartao</th>
+              <th align="start">Data do pagm.</th>
+              <th align="start">Tipo do Cartao</th>
             </tr>
-          </thead>
-          <tbody *ngFor="let dado of pessoal">
+          } @else {
             <tr>
-              <td align="start">{{dado.id}}</td>
-              <td align="start">{{dado.valor}}</td>
-              <td align="start">{{dado.descricao}}</td>
-              <td align="start">{{dado.transactionDate}}</td>
-              <td align="start">{{dado.formaDePagamentoId == 1 ? "Crédito" : "Débito"}}</td>
+              <th align="start">Valor</th>
+              <th align="start">Data da Transacao</th>
+              <th align="start">Descrição</th>
             </tr>
-          </tbody>
+          }
+          </thead>
+          @if(global.selecionou === true){
+            <tbody>
+              <tr>
+                <td align="start">{{transacao.cliente}}</td>
+                <td align="start">{{transacao.valor}}</td>
+                <td align="start">{{transacao.cartao}}</td>
+                <td align="start">{{transacao.data}}</td>
+                <td align="start">{{transacao.tipoCartao}}</td>
+              </tr>
+            </tbody>
+          } @else {
+            <tbody>
+              <tr *ngFor="let dados of listaTransacoes">
+                <td align="start">{{dados.valor}}</td>
+                <td align="start">{{formatarDataTransacao(dados.dataTransacao)}}</td>
+                <td align="start">{{dados.descricao}}</td>
+              </tr>
+            </tbody>
+          }
         </table>
       </div>
     </div>
